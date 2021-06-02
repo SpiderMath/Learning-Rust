@@ -20,7 +20,20 @@ fn main() {
             .expect("Failed to read the line");
 
         // I'm SHADOWING the previous value with this!
-        let guess: u128 = guess.trim().parse().expect("Please provide a valid number");
+        let guess: u128 = match guess.trim().parse() {
+            Ok(num) => num,
+            Err(_) => {
+                if guess.to_ascii_lowercase() == "quit" {
+                    println!("Finishing the game...");
+                    break;
+                }
+                println!("Please provide a numerical Input");
+                continue;
+            },
+        };
+        // The _ is for CATCH ALL like it will catch all errors
+        // Now I need to do some stuff so that it just doesn't keep looping for ever
+
         if guess == to_be_guessed {
             println!("Congratulations! You guessed the correct answer!");
             break;

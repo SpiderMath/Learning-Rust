@@ -1,0 +1,9 @@
+[package]
+name = "Learning_Variables"
+version = "0.1.0"
+authors = ["SpiderMath <71999854+SpiderMath@users.noreply.github.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
